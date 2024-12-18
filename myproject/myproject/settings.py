@@ -91,10 +91,10 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'literatus-project',
-        'USER': 'postgres',
+        'NAME': 'literatusproject',
+        'USER': 'mysuperuser',
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        'HOST': 'localhost',
+        'HOST': 'literatusproject.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
