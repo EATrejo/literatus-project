@@ -91,11 +91,11 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'literatusproject',
-        'USER': 'mysuperuser',
+        'NAME': 'literatus-project-db',
+        'USER': 'postgres',
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        'HOST': 'literatusproject.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
+        'HOST': 'localhost',
     }
 }
 
@@ -158,3 +158,6 @@ EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
 EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
+
+
+
