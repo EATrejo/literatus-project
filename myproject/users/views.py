@@ -37,8 +37,8 @@ def login_user(request):
                 
             
         else:
-            messages.error(request, 'Datos invalidos.')
-            return redirect(request.POST.get('next'))
+            messages.error(request, 'Datos invalidos. Favor de registrarse primero.')
+            
     return render(request, 'users/login.html')
 
 def logout_user(request):
@@ -149,7 +149,7 @@ def reset_password(request):
 
 
 
-
+@csrf_exempt
 def contacto(request):
     data = {
         'form': ContactoForm()
