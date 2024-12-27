@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'literatus-project-db',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
+        'PASSWORD':'Thed00rs*27',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
