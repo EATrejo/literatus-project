@@ -160,7 +160,7 @@ EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 
-ALLOWED_HOSTS = ['literatus-project-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost', 'literatus-project-production.up.railway.app']
 
 
 
