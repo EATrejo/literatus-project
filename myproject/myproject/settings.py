@@ -94,8 +94,8 @@ DATABASES = {
         'NAME': 'literatus-project-db',
         'USER': 'postgres',
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
