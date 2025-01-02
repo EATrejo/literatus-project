@@ -96,8 +96,10 @@ DATABASES = {
         'PASSWORD':'Thed00rs*27',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+
     }
 }
+
 
 
 # Password validation
@@ -164,7 +166,7 @@ EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 
-ALLOWED_HOSTS = ['localhost', 'artistic-flow-production.up.railway.app']
+#ALLOWED_HOSTS = ['localhost', 'artistic-flow-production.up.railway.app', '127.0.0.1' ]
 
 
 
