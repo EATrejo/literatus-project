@@ -5,7 +5,7 @@ from .models import Curso
 
 # Create your views here.
 def cursos_list(request):
-    cursos = Curso.objects.all()
+    cursos = Curso.objects.all().order_by('id')
     return render(request, 'cursos/cursos_list.html', {'cursos': cursos})
 
 
