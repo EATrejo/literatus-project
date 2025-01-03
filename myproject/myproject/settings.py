@@ -91,8 +91,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
+        'DATABASE_URL': 'dj_database_url.config(default=("postgresql://postgres:XHDcBvNzBTCudodHSPeLcmJmcloCZrJq@postgres.railway.internal:5432/railway")',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'literatus-project-db',
         'USER': 'postgres',
