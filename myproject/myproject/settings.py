@@ -11,13 +11,16 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 from dotenv import load_dotenv
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load our environment variables
-load_dotenv()
+
 
 
 
@@ -88,18 +91,18 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+print(dj_database_url.config(default=os.getenv('DATABASE_URL')))
 DATABASES = {
-    'default': {
-        'DATABASE_URL': 'dj_database_url.config(default=("postgresql://postgres:XHDcBvNzBTCudodHSPeLcmJmcloCZrJq@postgres.railway.internal:5432/railway")',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'literatus-project-db',
-        'USER': 'postgres',
-        'PASSWORD':'Thed00rs*27',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 
-    }
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': 'literatus-project-db',
+    #    'USER': 'postgres',
+    #    'PASSWORD':'Thed00rs*27',
+    #    'HOST': '127.0.0.1',
+    #    'PORT': '5432',
+
+    #}
 }
 
 
