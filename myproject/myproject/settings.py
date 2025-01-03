@@ -91,18 +91,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-print(dj_database_url.config(default=os.getenv('DATABASE_URL')))
+#print(dj_database_url.config(default=os.getenv('DATABASE_URL')))
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-
-    #    'ENGINE': 'django.db.backends.postgresql',
-    #    'NAME': 'literatus-project-db',
-    #    'USER': 'postgres',
-    #    'PASSWORD':'Thed00rs*27',
-    #    'HOST': '127.0.0.1',
-    #    'PORT': '5432',
-
-    #}
 }
 
 
