@@ -173,5 +173,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 ALLOWED_HOSTS = ['localhost', 'literatus-project-production.up.railway.app']
 
 
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatus-project-production.up.railway.app']
+
+
+
+
+
 
 
