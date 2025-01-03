@@ -5,15 +5,8 @@ from .models import Curso
 
 # Create your views here.
 def cursos_list(request):
-
-    cursos = Curso.objects.all().order_by('id')
-    
-    
-    context = {
-        'cursos': cursos,
-}
-    return render(request, 'cursos/cursos_list.html', context)
-    #return render(request, 'cursos/cursos_list.html', {'cursos': cursos})
+    cursos = Curso.objects.all()
+    return render(request, 'cursos/cursos_list.html', {'cursos': cursos})
 
 
 def curso_page(request, slug):
