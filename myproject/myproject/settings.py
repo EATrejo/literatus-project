@@ -163,7 +163,7 @@ DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-ALLOWED_HOSTS = ['localhost', 'literatus-project-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com']
 
 
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatus-project-production.up.railway.app']
