@@ -35,7 +35,7 @@
     
           <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a class="navbar-texto {% if request.resolver_match.url_name == 'home' %}active {% endif %}" href="/">Home<br></a></li>
+              <li><a class="navbar-texto {% if request.resolver_match.url_name == 'home' %}active {% endif %}" href="/">Nosotros<br></a></li>
               <li>
                 <a class="navbar-texto {% if request.resolver_match.url_name == 'list' %}active {% endif %}" href="{% url 'tertulias:list' %}" >Club de Lectura<span class="separador">&</span><span class="tertulia-navbar">TertuliasSabatinas</span></a>
               </li>
