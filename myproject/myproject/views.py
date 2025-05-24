@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from tertulias.models import Tertulia
 
 
-def homepage(request):
-    return render(request, 'home.html')
+
+def home(request):
+    tertulias = Tertulia.objects.all()  # Obtener todas las tertulias
+    return render(request, 'home.html', {'tertulias': tertulias})
+
 
 
 def about(request):

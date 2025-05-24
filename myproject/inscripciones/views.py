@@ -12,7 +12,7 @@ from django.utils.http import urlsafe_base64_decode
 
 
 
-@login_required(login_url="/users/login/")
+#@login_required(login_url="/users/login/")
 def inscripcion_tertulia(request):
         
         if request.method == 'POST':
