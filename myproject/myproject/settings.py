@@ -102,6 +102,7 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
         #'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
         'HOST': 'localhost',
+        'PORT': '5432', 
 
     }
 }
@@ -148,7 +149,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_URL = '/static/'
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -176,12 +177,12 @@ EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
 ALLOWED_HOSTS = ['literatustalleresycursos.com','127.0.0.1', 'localhost']
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
-ALLOWED_HOSTS = ['literatustalleresycursos.com','127.0.0.1', 'localhost']
+
 
 
 #CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
