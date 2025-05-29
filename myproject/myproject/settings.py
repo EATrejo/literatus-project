@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -156,6 +156,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Para versiones más recientes de WhiteNoise:
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",  # Sin manifest
+    },
+}
+
 # Configuración para archivos multimedia
 MEDIA_URL = '/media/'  # ¡Agrega la barra inicial!
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -177,9 +186,13 @@ DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 
 
-#ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
-ALLOWED_HOSTS = ['literatustalleresycursos.com','127.0.0.1', 'localhost']
-#ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
+ALLOWED_HOSTS = [
+    'literatustalleresycursos.com',
+    '127.0.0.1', 
+    'localhost',
+    'literatus-project-production.up.railway.app',
+    '.railway.app'  # Para cualquier subdominio de Railway
+]
 
 
 
