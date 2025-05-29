@@ -94,23 +94,22 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'literatus-project-db',
-        'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
-        'HOST': 'localhost',
-    }
-}
+
 
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
 #print(os.getenv('DATABASE_URL'))
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'TJqMgqkCfZUZduHSOwSLcZTiFVprpzVC',  # La de PGPASSWORD en Railway
+        'HOST': 'nozomi.proxy.rlwy.net',         # El host de Railway (no 127.0.0.1)
+        'PORT': '43944',                         # El puerto de Railway
+        'OPTIONS': {
+            'sslmode': 'require',  # Obligatorio para Railway
+        },
+    }
 }
 
 
