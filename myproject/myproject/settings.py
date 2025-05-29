@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 #import dj_database_url
 #import dj_database_url
+import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -92,25 +93,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'literatus-project-db',
-        'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        #'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
-        'HOST': 'localhost',
-        'PORT': '5432', 
 
-    }
-}
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
 #print(os.getenv('DATABASE_URL'))
-#DATABASES = {
-#    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-#}
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
 
 
 
