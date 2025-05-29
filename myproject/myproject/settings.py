@@ -182,15 +182,11 @@ DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 
 
-ALLOWED_HOSTS = [
-    'literatustalleresycursos.com',
-    '127.0.0.1', 
-    'localhost',
-]
+ALLOWED_HOSTS = ['*']
 
 
 
-#CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
 
 
 
