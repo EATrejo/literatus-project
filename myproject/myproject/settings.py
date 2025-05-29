@@ -159,11 +159,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Para versiones más recientes de WhiteNoise:
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",  # Sin manifest
-    },
-}
+
 
 # Configuración para archivos multimedia
 MEDIA_URL = '/media/'  # ¡Agrega la barra inicial!
