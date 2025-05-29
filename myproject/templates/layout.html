@@ -34,21 +34,15 @@
           </a>
     
           <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a class="navbar-texto {% if request.resolver_match.url_name == 'home' %}active {% endif %}" href="/">Nosotros<br></a></li>
-              <li>
-                <a class="navbar-texto {% if request.resolver_match.url_name == 'list' %}active {% endif %}" href="{% url 'tertulias:list' %}" >Club de Lectura<span class="separador">&</span><span class="tertulia-navbar">TertuliasSabatinas</span></a>
+            <ul style="width: 50%; padding-right: 290px;">
+              <li class="navbar-texto-link" style="margin-top: 30px; margin-bottom: 40px;"><a class="navbar-texto {% if request.resolver_match.url_name == 'home' %}active {% endif %}" style="font-size: 21px;" href="/">Nosotros<br></a></li>
+              <li style="margin-top: 30px; margin-bottom: 40px;">
+                <a class="navbar-texto {% if request.resolver_match.url_name == 'list' %}active {% endif %}" style="font-size: 21px;"href="{% url 'tertulias:list' %}">Club de Lectura<span class="separador">&</span><span class="tertulia-navbar" style="font-size: 21px;">TertuliasSabatinas</span></a>
               </li>
-              <li><a href="{% url 'cursos:lista' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'lista' %}active {% endif %}">Talleres y Cursos</a></li>
-              {% if user.is_authenticated %}
-              <li><a href="{% url 'users:logout' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'logout' %}active {% endif %}">Logout</a></li>
+              <li style="margin-top: 30px; margin-bottom: 40px;"><a style="font-size: 21px;" href="{% url 'cursos:lista' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'lista' %}active {% endif %}">Talleres y Cursos</a></li>
               
-              {% else %}
-              <li><a href="{% url 'users:login' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'login' %}active {% endif %}">Log in</a></li>
-             <li><a href="{% url 'users:register'%}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'register' %}active {% endif %}">Registrate</a></li>
-             
-             {% endif %}
-             <li><a href="{% url 'users:contacto' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'contacto' %}active {% endif %}" >Contacto</a></li>
+
+             <li style="margin-top: 30px; margin-bottom: 40px;"><a style="font-size: 21px;" href="{% url 'users:contacto' %}" class="nav-link navbar-texto {% if request.resolver_match.url_name == 'contacto' %}active {% endif %}" >Contacto</a></li>
             </ul>
             
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

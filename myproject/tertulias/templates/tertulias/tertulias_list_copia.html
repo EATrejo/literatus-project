@@ -9,6 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-1 col-xs-12 contenedor-titulo">
+
             <h2 class="titulo-club-2 text-white text-center md">Tertulias<span class="literatus">literarias</span>Sábatinas</h2>
             <br>
             <p class="text-white" style="text-align:justify;">IMPORTANTE: La inscripción a cualquiera de las tertulias es totalmente gratis, solamente debes de estar registrado previamente en LITERATUS. El cupo en las tertulias está limitado.</p>
@@ -30,12 +31,12 @@
 
                 <div class="post-entry lg">
                   <div class="post-meta"><span class="date">La guarida oficial</span> <span class="mx-1">•</span> <span>Literatus</span></div>
-                  <h2 ><a href="#" style="color: #ac1383;">Agradecimiento de todo corazón a La Borra del Café (Chapultepec, Guadalajara) por facilitarnos sus instalaciones.</a></h2>
+                  <h2 style="color: #ac1383; font-size: 35px; margin-bottom: 50px;">Agradecimiento de todo corazón a La Borra del Café (Chapultepec, Guadalajara) por facilitarnos sus instalaciones.</h2>
                   <a href="#"><img  src="/static/assets/img/la-borra-del-cafe-chapultepec.jpg" alt="" ></a>
                   <p class="image-tertulia">La Borra del Café sucursal  Av. Chapultepec, Guadalajara, Jalisco.</p>
                   <br>
                   <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="static/assets/img/alonso.jpg" alt="" class="img-fluid"></div>
+                  <div class="photo"></div>
 
                   </div>
                 </div>
@@ -45,14 +46,15 @@
               
               <div class="col-lg-8">
                 
-                <div class="row g-5">
+                <div class="row g-5"style="margin-top: 25px;">
                   {% if tertulias %}
                   {% for tertulia in tertulias  %}  
                   <div class="col-lg-4 border-start custom-border">
                     <div class="post-entry">
-                      <a href="#"><img src="{{ tertulia.tertulia_banner.url }}" alt="" class="img-fluid"></a>
+                      <a href="#"><img style="margin-bottom: 0;" src="{{ tertulia.tertulia_banner.url }}" alt="" class="img-fluid"></a>
                       <h2><a href="#"><small class="text-white">Tertulia:</small> {{ tertulia.tertulia_name }} </a></h2>
-                      <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Tertulia folio id #:</small> {{ tertulia.id }}</p>
+                      <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Tertulia folio id #:</small><a href="{% url 'tertulias:page' slug=tertulia.slug %}">{{ tertulia.id }}</a>
+                      </p>
                       <p class="post-meta"><span class="date"><small class="text-white" style="font-size: 14px;">Sede:</small> {{ tertulia.tertulia_address }} </span></p>
                       <br>
                       <p class="mb-4 d-block" style="text-align: justify !important;"><small class="text-white" style="font-size: 14px;">Descripcion:</small> {{ tertulia.tertulia_description}}</p>
@@ -75,14 +77,16 @@
                       </div>
                     </div>
                     <br>
+                    
                     <div class="d-flex align-items-center author">
-                      <small class="tertulia-importante">Es IMPORTANTE que retengas el folio id de la tertulia y el nombre de la misma, ya que son campos obligatorios al momento de rellenar la solicitud de inscripción</small>
+                      
                       {%if tertulia.tertulia_lugares == 0%}
                       <a class="btn btn-primary" style="margin-top: 5px;" href="{% url 'inscripciones:no_hay_lugares' %}">Inscribirse</a>
                       {% else %}
                         <a class="btn btn-primary" style="margin-top: 5px;" href="{% url 'inscripciones:inscripcion_tertulia' %}">Inscribirse</a>
                       {% endif %}
                     </div>
+                    <small class="tertulia-importante">Es IMPORTANTE que retengas el folio id de la tertulia y el nombre de la misma, ya que son campos obligatorios al momento de rellenar la solicitud de inscripción</small>
                     <div class="linea"></div>
                       
                     

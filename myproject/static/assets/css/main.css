@@ -117,7 +117,7 @@ h6 {
 
 .titulo-club{
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: -15px;
   margin-bottom: 3rem;
 }
@@ -168,7 +168,12 @@ h6 {
 .tertulia-importante{
   text-align:justify;
   padding-right: 20px;
+  
 }
+
+
+
+
 
 
 .parrafo-club{
@@ -221,6 +226,11 @@ h6 {
   color: blueviolet;
 }
 
+@media (min-width: 1024px) {
+  .tertulias-literarias { font-size: 15px;}
+}
+
+
 
 .separador{
   font-size: 12px;
@@ -229,7 +239,7 @@ h6 {
 
 .tertulia-navbar{
   font-size: 16px;
-  margin-left: -40px;
+  margin-left: -90px;
   margin-bottom: -30px;
   padding-left: -20px;
   color: blueviolet;
@@ -269,6 +279,7 @@ h6 {
 
 .trending-category .author .photo img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-bottom: 0;
 }
@@ -287,7 +298,7 @@ h6 {
 .header {
   color: var(--default-color);
   background-color: #fff;
-  padding: 0px 15px;
+  padding: 0px 10px;
   transition: all 0.5s;
   z-index: 997;
   border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
@@ -346,6 +357,138 @@ h6 {
   border-color: var(--contrast-color);
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
+
+/* SECCION TERTULIA SABATINA 
+.seccion-tertulia-sabatina{
+  display: flex;
+  justify-content: center;
+}
+
+.tertulia-sabatina{
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+
+}
+
+.tertulia-sabatina .foto-tertulia{
+  width: 20%;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+.foto-tertulia .titulo-tertulia-sabatina{
+  font-size: 30px;
+  align-self: center;
+  padding-top: 0;
+  padding-bottom: 10px;
+
+}
+
+.foto-tertulia-sabatina img{
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.seccion-tertulia-sabatina .texto-tertulia-sabatina{
+width: 40%;
+padding: 30px;
+}
+
+.texto-tertulia-sabatina .photo img{
+ 
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: block;
+  
+}
+*/
+/* SECCION PAGINA DE TERTULIA SABATINA */
+.seccion-tertulia-sabatina {
+    text-align: center; /* Centra textos del contenedor principal */
+}
+
+.tertulia-sabatina {
+    display: flex;
+    flex-direction: column; /* Los elementos están en columnas por defecto */
+    align-items: center; /* Centra elementos horizontalmente */
+}
+
+.tertulia-columns {
+    display: flex; /* Usamos flexbox para distribuir en columnas */
+    justify-content: center; /* Centra columnas dentro del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una línea */
+    width: 100%; /* Tomar el ancho completo del contenedor */
+}
+
+.foto-tertulia,
+.texto-tertulia-sabatina {
+    flex: 1 1 calc(50% - 20px); /* Dos columnas, menos el margen */
+    margin: 10px; /* Espaciado entre columnas */
+    box-sizing: border-box; /* Asegura que el padding/margin no afecte el ancho total */
+}
+
+.texto-tertulia-sabatina {
+    text-align: left; /* Alinea todos los textos a la izquierda */
+    padding-left: 0; /* Elimina el padding izquierdo global */
+}
+
+/* Reinicio de márgenes y paddings para texto dentro de texto-tertulia-sabatina */
+.texto-tertulia-sabatina h1,
+.texto-tertulia-sabatina h2,
+.texto-tertulia-sabatina h3,
+.texto-tertulia-sabatina p,
+.texto-tertulia-sabatina .post-meta {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+}
+
+/* Margen superior para los títulos */
+.titulo-club-2,
+.titulo-tertulia-sabatina {
+    margin-top: 30px; /* Añade un margen superior de 30px */
+}
+
+.titulo-tertulia-sabatina {
+    font-size: 2.5rem; /* Aumenta el tamaño base del texto */
+    margin-top: 30px; /* Asegúrate de que ya lo hayas establecido */
+    padding-bottom: 30px; /* Agrega un padding inferior de 30px */
+}
+
+.photo img {
+    width: 50%; /* Ajusta el ancho de la imagen a la mitad */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+/* Responsividad: Ajustar el tamaño para diferentes pantallas */
+@media (max-width: 1200px) {
+    .titulo-tertulia-sabatina {
+        font-size: 2rem; /* Tamaño ajustado para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-tertulia-sabatina {
+        font-size: 1.5rem; /* Tamaño aún más pequeño para dispositivos móviles */
+    }
+}
+
+
+@media (max-width: 425px) {
+    .foto-tertulia,
+    .texto-tertulia-sabatina {
+        flex: 1 1 100%; /* Cambia a una sola columna en pantallas más pequeñas */
+    }
+}
+
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -895,6 +1038,7 @@ section,
   z-index: 2;
 }
 
+
 .hero img {
   position: absolute;
   inset: 0;
@@ -963,9 +1107,9 @@ section,
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
-  height: 1000px;
+  height: 100%;
   width: 100%;
-
+  padding: 10px;
 }
 
 .hero .titulo-docente{

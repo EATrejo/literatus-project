@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
+#import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -33,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*8%a+l^o8+_ow8b$jt9jbh9eko_*5@z5bql63k^i+kpxq&qus('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -91,10 +91,24 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-print(os.getenv('DATABASE_URL'))
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'literatus-project-db',
+        'USER': 'postgres',
+        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
+        #'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
+        'HOST': 'localhost',
+        'PORT': 5432
+    }
 }
+#A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
+#print(os.getenv('DATABASE_URL'))
+#DATABASES = {
+#    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+#}
 
 
 
@@ -132,7 +146,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -158,15 +172,15 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'layenaalonso@gmail.com'
 EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
-EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
+#ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
+ALLOWED_HOSTS = ['literatustalleresycursos.com','127.0.0.1', 'localhost']
 
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
+#CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
 
 
 
