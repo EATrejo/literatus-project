@@ -186,8 +186,6 @@ ALLOWED_HOSTS = [
     'literatustalleresycursos.com',
     '127.0.0.1', 
     'localhost',
-    'literatus-project-production.up.railway.app',
-    '.railway.app'  # Para cualquier subdominio de Railway
 ]
 
 
