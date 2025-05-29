@@ -101,7 +101,7 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
         #'HOST': 'dbliteratus.cd8uwk820fvn.us-east-2.rds.amazonaws.com',
         'HOST': 'localhost',
-        'PORT': 5432
+
     }
 }
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
