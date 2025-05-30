@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-#import dj_database_url
+import dj_database_url
 #import dj_database_url
 import dj_database_url
 from dotenv import load_dotenv
@@ -101,17 +101,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
 #print(os.getenv('DATABASE_URL'))
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'TJqMgqkCfZUZduHSOwSLcZTiFVprpzVC',  # La de PGPASSWORD en Railway
-        'HOST': 'nozomi.proxy.rlwy.net',         # El host de Railway (no 127.0.0.1)
-        'PORT': '43944',                         # El puerto de Railway
-        'OPTIONS': {
-            'sslmode': 'require',  # Obligatorio para Railway
-        },
-    }
+   'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
@@ -151,18 +141,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # Configuración corregida para archivos estáticos y medios
+# Configuración base
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Ruta donde se recolectarán los archivos
 
-# Directorio donde se recogen los archivos estáticos para producción
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Directorios donde Django buscará archivos estáticos adicionales
+# Directorios adicionales con archivos estáticos
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),  # Donde guardas tus archivos durante desarrollo
 ]
 
-# Directorio para archivos subidos por usuarios
+# Configuración para imágenes/media
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configuración de WhiteNoise
