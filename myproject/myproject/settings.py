@@ -150,20 +150,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Nombre estándar recomendado
+STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_URL = 'media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Para versiones más recientes de WhiteNoise:
 
-
-# Configuración para archivos multimedia
-MEDIA_URL = '/media/'  # ¡Agrega la barra inicial!
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
