@@ -101,7 +101,17 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
 #print(os.getenv('DATABASE_URL'))
 DATABASES = {
-   'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'TJqMgqkCfZUZduHSOwSLcZTiFVprpzVC',  # La de PGPASSWORD en Railway
+        'HOST': 'nozomi.proxy.rlwy.net',         # El host de Railway (no 127.0.0.1)
+        'PORT': '43944',                         # El puerto de Railway
+        'OPTIONS': {
+            'sslmode': 'require',  # Obligatorio para Railway
+        },
+    }
 }
 
 
