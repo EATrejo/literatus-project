@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-#import dj_database_url
-#import dj_database_url
 import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
@@ -35,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*8%a+l^o8+_ow8b$jt9jbh9eko_*5@z5bql63k^i+kpxq&qus('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -68,8 +66,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-
 AUTH_USER_MODEL = 'users.User'
 
 ROOT_URLCONF = 'myproject.urls'
@@ -95,23 +91,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-
-
-#A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
-#print(os.getenv('DATABASE_URL'))
+print(os.getenv('DATABASE_URL'))
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'TJqMgqkCfZUZduHSOwSLcZTiFVprpzVC',  # La de PGPASSWORD en Railway
-        'HOST': 'nozomi.proxy.rlwy.net',         # El host de Railway (no 127.0.0.1)
-        'PORT': '43944',                         # El puerto de Railway
-        'OPTIONS': {
-            'sslmode': 'require',  # Obligatorio para Railway
-        },
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
@@ -150,11 +132,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# Configuración corregida para archivos estáticos y medios
-# Configuración base
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -163,17 +140,11 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT= os.path.join(BASE_DIR,'static_files')
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
-
-# Configuración de WhiteNoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Para versiones más recientes de WhiteNoise:
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -187,14 +158,14 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'layenaalonso@gmail.com'
 EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
+EMAIL_USE_TLS= True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
 
 
-ALLOWED_HOSTS = ['*']
-
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']
 
 
