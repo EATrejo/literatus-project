@@ -15,7 +15,7 @@ class Tertulia(models.Model):
     tertulia_encargado_picture = models.ImageField(default='alonso.jpg', blank=True)
     tertulia_encargado = models.CharField(max_length=100)
     tertulia_lugares = models.PositiveIntegerField(blank=True, null=True)
-    slug = models.SlugField(max_length=200, null=True, blank=True)
+    slug = models.SlugField(max_length=200, null=True, blank=True) 
 
     def __str__(self):
         return self.tertulia_name
